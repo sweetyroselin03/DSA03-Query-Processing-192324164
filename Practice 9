@@ -1,0 +1,22 @@
+import sqlite3
+
+conn = sqlite3.connect(':memory:')
+
+cursor = conn.cursor()
+
+cursor.execute('CREATE TABLE users (id INTEGER, name TEXT, age INTEGER)')
+
+cursor.execute('INSERT INTO users VALUES (1, "Alice", 25)')
+
+conn.commit()
+
+cursor.execute("PRAGMA table_info(users)")
+
+schema = cursor.fetchall()
+
+print("Database Schema:")
+
+for column in schema:
+    print(column)
+
+conn.close()
