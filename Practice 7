@@ -1,0 +1,7 @@
+import json
+
+data = '{"Name": "Alice", "Age": 25}'
+
+parsed_data = json.loads(data)
+
+print(parsed_data)
