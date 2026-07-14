@@ -1,0 +1,6 @@
+data = {"raw_data": [None, 23, 45, None, 67, "NA", 89]}
+
+cleaned_data = [x for x in data["raw_data"] if x not in [None, "NA"]]
+
+print("Raw Data:", data["raw_data"])
+print("Cleaned Data:", cleaned_data)
